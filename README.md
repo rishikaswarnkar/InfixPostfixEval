@@ -20,7 +20,7 @@ A running display of the contents of the INFIX buffer,the POSTFIX buffer, and th
 USER DEFINED MODULE:
 
 
-stackClass():set private pointers to NULL			
+stackClass():set private pointers to NULL
 ~stackClass():To destruct the stack                                
 infixToPostfix(string,ofstream&): converts infix expression to     
 								postfix expression					  
