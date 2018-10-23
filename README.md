@@ -1,8 +1,6 @@
 # InfixPostfixEval
 
 /**********************************************************/
-
-/**************************/
 This program will take a mathematical expression in INFIX notation, convert it to POSTFIX notation 
 and then evaluate POSTFIX notation form of the expression.The program employs stacks with pointers.
 
