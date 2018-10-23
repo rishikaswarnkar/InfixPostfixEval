@@ -1,13 +1,14 @@
 # InfixPostfixEval
 /**********************************************************/
 /**************************/
-PROCESS: 
 This program will take a mathematical expression in INFIX notation, convert it to POSTFIX notation 
 and then evaluate POSTFIX notation form of the expression.The program employs stacks with pointers.
-INPUT: Input for this program will consist of an unknown number of lines.Each line will contain a 
+
+Input for this program will consist of an unknown number of lines.Each line will contain a 
 mathematical expression in INFIX notation.Using stacks, the program converts the INFIX expression 
 to POSTFIX notation and then evaluate the POSTFIX expression.
-OUTPUT: Output for each expression is to appear on a separate page.Output is to consist of 3 phases.
+
+Output for each expression is to appear on a separate page.Output is to consist of 3 phases.
 They are the conversion phase,evaluation phase and expression phase.
 A running display of the contents of the INFIX buffer,the POSTFIX buffer, and the stack.
 /********************************************************/
