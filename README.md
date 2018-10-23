@@ -1,5 +1,6 @@
 # InfixPostfixEval
-PROCESS:
+/**********************************************************/
+/*********PROCESS:***************/
 This program will take a mathematical expression in INFIX notation, convert it to POSTFIX notation,
 and then evaluate POSTFIX notation form of the expression.The program employs stacks with pointers.
 INPUT:
@@ -10,6 +11,8 @@ OUTPUT:
 Output for each expression is to appear on a separate page.Output is to consist of 3 phases.
 They are the conversion phase,evaluation phase and expression phase.
 A running display of the contents of the INFIX buffer,the POSTFIX buffer, and the stack.
+/********************************************************/
+/*******************************************************/
 USER DEFINED MODULE
 stackClass():set private pointers to NULL			
 ~stackClass():To destruct the stack                                
@@ -35,3 +38,4 @@ RetrieveRear(): Check if the stack is empty if not then return data
 Push(char):Adds to the Stack                                       
 Pop():Pop the first element of the stack                           
 getTop():Returns the Top Pointer    
+/*********************************************************/
