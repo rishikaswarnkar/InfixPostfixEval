@@ -21,6 +21,7 @@ USER DEFINED MODULE:
 
 
 stackClass():set private pointers to NULL
+
 ~stackClass():To destruct the stack                                
 infixToPostfix(string,ofstream&): converts infix expression to postfix expression					  
 incLine(): increases lineCounter by 1 and returns it               
