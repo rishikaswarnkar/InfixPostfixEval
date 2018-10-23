@@ -1,0 +1,480 @@
+              Rishika Swarnkar        CSC 36000     Section 11
+                   Spring 2018    Assignment #4
+---------------------------------------------------------------------------- 
+
+            CONVERSION DISPLAY
+Infix Expression       Postfix Expression           Stack Contents
+                                                  (Top to Bottom)
+8-3+5                    Empty                    Empty
+ 8-3+5                   8               Empty
+  -3+5                   8                   -1
+   3+5                  83                   -1
+    +5                 83-                   +1
+     5                83-5                   +1
+ Empty               83-5+               Empty
+
+             EVALUTION DISPLAY
+Infix EXPRESSION                                         Stack Contents
+                                             (Top to Bottom)
+83-5+                                             Empty
+ 3-5+                                                 8
+  -5+                                                 83
+   5+                                                 5
+    +                                                 55
+Empty                                                     10
+The Original Expression and The answer: 
+8-3+5 = 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            CONVERSION DISPLAY
+Infix Expression       Postfix Expression           Stack Contents
+                                                  (Top to Bottom)
+8-(3+5)                    Empty                    Empty
+ 8-(3+5)                   8               Empty
+  -(3+5)                   8                   -1
+   (3+5)                   8                   (-1
+    3+5)                  83                   (-1
+     +5)                  83                   +(-1
+      5)                 835                   +(-1
+       )                835+                   -1
+   Empty               835+-               Empty
+
+             EVALUTION DISPLAY
+Infix EXPRESSION                                         Stack Contents
+                                             (Top to Bottom)
+835+-                                             Empty
+ 35+-                                                 8
+  5+-                                                 83
+   +-                                                 835
+    -                                                 88
+Empty                                                      0
+The Original Expression and The answer: 
+8-(3+5) = 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            CONVERSION DISPLAY
+Infix Expression       Postfix Expression           Stack Contents
+                                                  (Top to Bottom)
+3+4*5                    Empty                    Empty
+ 3+4*5                   3               Empty
+  +4*5                   3                   +1
+   4*5                  34                   +1
+    *5                  34                   *+1
+     5                 345                   *+1
+ Empty               345*+               Empty
+
+             EVALUTION DISPLAY
+Infix EXPRESSION                                         Stack Contents
+                                             (Top to Bottom)
+345*+                                             Empty
+ 45*+                                                 3
+  5*+                                                 34
+   *+                                                 345
+    +                                                 320
+Empty                                                     23
+The Original Expression and The answer: 
+3+4*5 = 23
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            CONVERSION DISPLAY
+Infix Expression       Postfix Expression           Stack Contents
+                                                  (Top to Bottom)
+3*7-4/2                    Empty                    Empty
+ 3*7-4/2                   3               Empty
+  *7-4/2                   3                   *1
+   7-4/2                  37                   *1
+    -4/2                 37*                   -1
+     4/2                37*4                   -1
+      /2                37*4                   /-1
+       2               37*42                   /-1
+   Empty             37*42/-               Empty
+
+             EVALUTION DISPLAY
+Infix EXPRESSION                                         Stack Contents
+                                             (Top to Bottom)
+37*42/-                                             Empty
+ 7*42/-                                                 3
+  *42/-                                                 37
+   42/-                                                21
+    2/-                                                214
+     /-                                                2142
+      -                                                212
+Empty                                                       19
+The Original Expression and The answer: 
+3*7-4/2 = 19
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            CONVERSION DISPLAY
+Infix Expression       Postfix Expression           Stack Contents
+                                                  (Top to Bottom)
+(7+2)*3                    Empty                    Empty
+ (7+2)*3               Empty               (1
+  7+2)*3                   7                   (1
+   +2)*3                   7                   +(1
+    2)*3                  72                   +(1
+     )*3                 72+               Empty
+      *3                 72+                   *1
+       3                72+3                   *1
+   Empty               72+3*               Empty
+
+             EVALUTION DISPLAY
+Infix EXPRESSION                                         Stack Contents
+                                             (Top to Bottom)
+72+3*                                             Empty
+ 2+3*                                                 7
+  +3*                                                 72
+   3*                                                 9
+    *                                                 93
+Empty                                                     27
+The Original Expression and The answer: 
+(7+2)*3 = 27
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            CONVERSION DISPLAY
+Infix Expression       Postfix Expression           Stack Contents
+                                                  (Top to Bottom)
+3*(2-6)                    Empty                    Empty
+ 3*(2-6)                   3               Empty
+  *(2-6)                   3                   *1
+   (2-6)                   3                   (*1
+    2-6)                  32                   (*1
+     -6)                  32                   -(*1
+      6)                 326                   -(*1
+       )                326-                   *1
+   Empty               326-*               Empty
+
+             EVALUTION DISPLAY
+Infix EXPRESSION                                         Stack Contents
+                                             (Top to Bottom)
+326-*                                             Empty
+ 26-*                                                 3
+  6-*                                                 32
+   -*                                                 326
+    *                                                 3-4
+Empty                                                    -12
+The Original Expression and The answer: 
+3*(2-6) = -12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            CONVERSION DISPLAY
+Infix Expression       Postfix Expression           Stack Contents
+                                                  (Top to Bottom)
+(2+3)*(6-4)                    Empty                    Empty
+ (2+3)*(6-4)               Empty               (1
+  2+3)*(6-4)                   2                   (1
+   +3)*(6-4)                   2                   +(1
+    3)*(6-4)                  23                   +(1
+     )*(6-4)                 23+               Empty
+      *(6-4)                 23+                   *1
+       (6-4)                 23+                   (*1
+        6-4)                23+6                   (*1
+         -4)                23+6                   -(*1
+          4)               23+64                   -(*1
+           )              23+64-                   *1
+       Empty             23+64-*               Empty
+
+             EVALUTION DISPLAY
+Infix EXPRESSION                                         Stack Contents
+                                             (Top to Bottom)
+23+64-*                                             Empty
+ 3+64-*                                                 2
+  +64-*                                                 23
+   64-*                                                 5
+    4-*                                                 56
+     -*                                                 564
+      *                                                 52
+Empty                                                       10
+The Original Expression and The answer: 
+(2+3)*(6-4) = 10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            CONVERSION DISPLAY
+Infix Expression       Postfix Expression           Stack Contents
+                                                  (Top to Bottom)
+(3+4)*8-(7*3-4)                    Empty                    Empty
+ (3+4)*8-(7*3-4)               Empty               (1
+  3+4)*8-(7*3-4)                   3                   (1
+   +4)*8-(7*3-4)                   3                   +(1
+    4)*8-(7*3-4)                  34                   +(1
+     )*8-(7*3-4)                 34+               Empty
+      *8-(7*3-4)                 34+                   *1
+       8-(7*3-4)                34+8                   *1
+        -(7*3-4)               34+8*                   -1
+         (7*3-4)               34+8*                   (-1
+          7*3-4)              34+8*7                   (-1
+           *3-4)              34+8*7                   *(-1
+            3-4)             34+8*73                   *(-1
+             -4)            34+8*73*                   -(-1
+              4)           34+8*73*4                   -(-1
+               )          34+8*73*4-                   -1
+           Empty         34+8*73*4--               Empty
+
+             EVALUTION DISPLAY
+Infix EXPRESSION                                         Stack Contents
+                                             (Top to Bottom)
+34+8*73*4--                                             Empty
+ 4+8*73*4--                                                 3
+  +8*73*4--                                                 34
+   8*73*4--                                                 7
+    *73*4--                                                 78
+     73*4--                                                56
+      3*4--                                                567
+       *4--                                                5673
+        4--                                                5621
+         --                                                56214
+          -                                                5617
+Empty                                                           39
+The Original Expression and The answer: 
+(3+4)*8-(7*3-4) = 39
+
+
+
+
+
+
+
+
+
+
+            CONVERSION DISPLAY
+Infix Expression       Postfix Expression           Stack Contents
+                                                  (Top to Bottom)
+4*3/2+4*5*2-8/4/2                    Empty                    Empty
+ 4*3/2+4*5*2-8/4/2                   4               Empty
+  *3/2+4*5*2-8/4/2                   4                   *1
+   3/2+4*5*2-8/4/2                  43                   *1
+    /2+4*5*2-8/4/2                 43*                   /1
+     2+4*5*2-8/4/2                43*2                   /1
+      +4*5*2-8/4/2               43*2/                   +1
+       4*5*2-8/4/2              43*2/4                   +1
+        *5*2-8/4/2              43*2/4                   *+1
+         5*2-8/4/2             43*2/45                   *+1
+          *2-8/4/2            43*2/45*                   *+1
+           2-8/4/2           43*2/45*2                   *+1
+            -8/4/2         43*2/45*2*+                   -1
+             8/4/2        43*2/45*2*+8                   -1
+              /4/2        43*2/45*2*+8                   /-1
+               4/2       43*2/45*2*+84                   /-1
+                /2      43*2/45*2*+84/                   /-1
+                 2     43*2/45*2*+84/2                   /-1
+             Empty   43*2/45*2*+84/2/-               Empty
+
+             EVALUTION DISPLAY
+Infix EXPRESSION                                         Stack Contents
+                                             (Top to Bottom)
+43*2/45*2*+84/2/-                                             Empty
+ 3*2/45*2*+84/2/-                                                 4
+  *2/45*2*+84/2/-                                                 43
+   2/45*2*+84/2/-                                                12
+    /45*2*+84/2/-                                                122
+     45*2*+84/2/-                                                 6
+      5*2*+84/2/-                                                 64
+       *2*+84/2/-                                                 645
+        2*+84/2/-                                                 620
+         *+84/2/-                                                 6202
+          +84/2/-                                                 640
+           84/2/-                                                46
+            4/2/-                                                468
+             /2/-                                                4684
+              2/-                                                462
+               /-                                                4622
+                -                                                461
+Empty                                                                 45
+The Original Expression and The answer: 
+4*3/2+4*5*2-8/4/2 = 45
+
+
+            CONVERSION DISPLAY
+Infix Expression       Postfix Expression           Stack Contents
+                                                  (Top to Bottom)
+5*((9/3+1)*(6-4))+1                    Empty                    Empty
+ 5*((9/3+1)*(6-4))+1                   5               Empty
+  *((9/3+1)*(6-4))+1                   5                   *1
+   ((9/3+1)*(6-4))+1                   5                   (*1
+    (9/3+1)*(6-4))+1                   5                   ((*1
+     9/3+1)*(6-4))+1                  59                   ((*1
+      /3+1)*(6-4))+1                  59                   /((*1
+       3+1)*(6-4))+1                 593                   /((*1
+        +1)*(6-4))+1                593/                   +((*1
+         1)*(6-4))+1               593/1                   +((*1
+          )*(6-4))+1              593/1+                   (*1
+           *(6-4))+1              593/1+                   *(*1
+            (6-4))+1              593/1+                   (*(*1
+             6-4))+1             593/1+6                   (*(*1
+              -4))+1             593/1+6                   -(*(*1
+               4))+1            593/1+64                   -(*(*1
+                ))+1           593/1+64-                   *(*1
+                 )+1          593/1+64-*                   *1
+                  +1         593/1+64-**                   +1
+                   1        593/1+64-**1                   +1
+               Empty       593/1+64-**1+               Empty
+
+             EVALUTION DISPLAY
+Infix EXPRESSION                                         Stack Contents
+                                             (Top to Bottom)
+593/1+64-**1+                                             Empty
+ 93/1+64-**1+                                                 5
+  3/1+64-**1+                                                 59
+   /1+64-**1+                                                 593
+    1+64-**1+                                                 53
+     +64-**1+                                                 531
+      64-**1+                                                 54
+       4-**1+                                                 546
+        -**1+                                                 5464
+         **1+                                                 542
+          *1+                                                 58
+           1+                                                40
+            +                                                401
+Empty                                                             41
+The Original Expression and The answer: 
+5*((9/3+1)*(6-4))+1 = 41
+
+
+
+
+
+     ------------------------------
+          | END OF PROGRAM OUTPUT |
+    -------------------------------
